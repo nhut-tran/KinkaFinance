@@ -285,7 +285,7 @@ p {
     align-items: center;
     flex-basis: 50%;
     background-color: #383F50;
-    padding: 40px 0px 40px 50px;
+    padding: 40px 0px 40px 0px;
     color: #FFFFFF;
 
 
@@ -306,9 +306,9 @@ p {
 
 .calculator-box p {
     display: inline-block;
-    padding-left: 25px;
+    /* padding-left: 25px;
     padding-right: 50px;
-    line-height: 180%;
+    line-height: 180%; */
     text-align: left;
 }
 
@@ -333,6 +333,13 @@ p {
     .calculator-box h1 {
         font-size: 30px;
     }
+}
+
+.mortage-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: max-content max-content;
+    column-gap: 10px;
 }
 
 .footer {
