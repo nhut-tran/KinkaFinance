@@ -173,7 +173,6 @@ p {
 
 .header-section {
     grid-column: 2 / 10;
-    background-image: url("../images/hero.png");
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
