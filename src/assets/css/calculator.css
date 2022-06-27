@@ -18,7 +18,7 @@
     flex-basis: 50%;
 }
 
-.calculator-text-box a {
+.calculator-text-box>a {
     margin-top: 40px;
 }
 

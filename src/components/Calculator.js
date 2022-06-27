@@ -21,10 +21,8 @@ const Calculator = () => {
                 <p className="calculator-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore</p>
                 <div className="slider-container">
                     <Slider title="Purchase Price" step={100} value={state.purchasePrice} unit="$" setValue={setValue.bind(null, "purchasePrice")} min={100} max={900000} />
-                    <Slider title="Down Payment" step={100} value={state.downPayment} unit="$" setValue={setValue.bind(null, "downPayment")} min={0} max={
-                        state.purchasePrice === 0 ? 0 : state.purchasePrice //control downpayment always <= purchaseprice
-                    } />
-                    <Slider title="Repayment Time" step={1} value={state.repaymentTime} unit="year" setValue={setValue.bind(null, "repaymentTime")} min={0} max={65} />
+                    <Slider title="Down Payment" step={100} value={state.downPayment} unit="$" setValue={setValue.bind(null, "downPayment")} min={0} max={900000} />
+                    <Slider title="Repayment Time" step={1} value={state.repaymentTime} unit=" year" setValue={setValue.bind(null, "repaymentTime")} min={0} max={65} />
                     <Slider title="Interest Rate" step={1} value={state.interestRate} unit="%" setValue={setValue.bind(null, "interestRate")} min={0} max={12} />
 
                 </div>

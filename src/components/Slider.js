@@ -1,8 +1,14 @@
 import React from "react";
-import Sliders from 'rc-slider';
+import SliderComponent from 'rc-slider';
 import 'rc-slider/assets/index.css';
 
+
 export const forMatCurrency = (num) => {
+    /*
+        if interest rate and year payment not set (result is NaN) 
+        or dowpayment > purchase price
+        return 0;
+    */
     if (isNaN(num) | !isFinite(num) | num < 0) return 0
     return num.toLocaleString('en-US',
         {
@@ -15,8 +21,8 @@ const Slider = ({ value, setValue, max, min, title, unit, step }) => {
     return (
         <div className="slider">
             <p>{title}: {unit === "$" ?
-                forMatCurrency(value) : `${value} ${unit}`}</p>
-            <Sliders
+                forMatCurrency(value) : `${value}${unit}`}</p>
+            <SliderComponent
                 step={step}
                 style={{ width: "240px" }}
                 railStyle={{

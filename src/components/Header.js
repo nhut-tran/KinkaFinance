@@ -1,12 +1,12 @@
 import React, { useState } from "react";
-import { Link } from 'gatsby'
+import { Link } from "gatsby";
 import { StaticImage } from "gatsby-plugin-image";
 import "../assets/css/header.css"
 
 const Header = () => {
     const [displaySmallNav, setDisplaySmallNav] = useState(false);
     return (
-        <main className="header">
+        <header className="header">
             <nav className="header-nav">
                 <StaticImage className="logo-header" as="div" src="../assets/images/logo-header.png" placeholder="TRACED_SVG" alt="logo" />
                 <div className="nav-links">
@@ -33,7 +33,7 @@ const Header = () => {
                     <span className="nav-link-stick"></span>
                 </div>
             </nav>
-        </main>
+        </header>
     )
 }
 
