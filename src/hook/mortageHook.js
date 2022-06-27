@@ -8,22 +8,19 @@ const initialState = {
 
     estimatePayPerMonth: 0
 };
-const calculatePayPerMonth = ({
-    purchasePrice,
-    downPayment,
-    repaymentTime,
-    interestRate,
-    estimatePayPerMonth
-}) => {
 
+const calculatePayPerMonth = ({ purchasePrice, downPayment, repaymentTime, interestRate, estimatePayPerMonth }) => {
+    //interest rate input is annual interest => convert to monthly: divide by 12
     const convertedInterestRate = interestRate / 100 / 12;
+
+    //input data is year. The pay is done by month => number of times pay = year*12
     const numberPayTime = repaymentTime * 12;
+
     const firstPartFormular = purchasePrice - downPayment
     const seconPartFormular = convertedInterestRate * ((1 + convertedInterestRate) ** numberPayTime)
     const thirdPartFormular = (((1 + convertedInterestRate) ** numberPayTime) - 1)
+
     estimatePayPerMonth = (firstPartFormular * (seconPartFormular / thirdPartFormular))
-
-
 
 
     return {
@@ -36,6 +33,7 @@ const calculatePayPerMonth = ({
 }
 
 function reducer(state, action) {
+    // action.type is also prop of state object
     switch (action.type) {
         case "purchasePrice":
             return calculatePayPerMonth({ ...state, [action.type]: action.value })

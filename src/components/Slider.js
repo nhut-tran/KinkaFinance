@@ -1,6 +1,7 @@
 import React from "react";
 import Sliders from 'rc-slider';
 import 'rc-slider/assets/index.css';
+
 export const forMatCurrency = (num) => {
     if (isNaN(num) | !isFinite(num) | num < 0) return 0
     return num.toLocaleString('en-US',
@@ -10,13 +11,14 @@ export const forMatCurrency = (num) => {
             maximumFractionDigits: 0
         })
 }
-const Slider = ({ value, setValue, max, min, title, unit }) => {
+const Slider = ({ value, setValue, max, min, title, unit, step }) => {
     return (
         <div className="slider">
             <p>{title}: {unit === "$" ?
                 forMatCurrency(value) : `${value} ${unit}`}</p>
             <Sliders
-                style={{ width: "256px" }}
+                step={step}
+                style={{ width: "240px" }}
                 railStyle={{
                     backgroundColor: "#ffffff",
                     height: "14px",
